@@ -1,11 +1,57 @@
 canvas{
-  border: solid gray 1px;
+  border: solid #333 3px;
+  margin-bottom: 5vh;
+  background: white;
+  border-radius: 1px;
+  cursor: crosshair;
 }
 
 .main{
   height: 100vh;
   width: 100vw;
+  background: whitesmoke;
+  display: grid;
+  grid-template-rows: 2fr 7fr 2fr;
+}
+
+.title{
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 3.5em;
+  font-weight: 500;
+  letter-spacing: 5px;
+  font-family: monospace;
+}
+
+.canvas-area{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tools button{
+  border: none;
+  background: white;
+  color: #333;
+  font-family: monospace;
+  height: 40px;
+  width: 80px;
+  border-radius: 2px;
+  border: solid 3px #333;
+  letter-spacing: 2px;
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-top: -50px;
+  cursor: pointer;
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace;
+  letter-spacing: 3px;
+  font-size: 1.5em;
 }
