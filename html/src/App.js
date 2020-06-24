@@ -40,18 +40,23 @@ const App = (prop) =>{
     can = document.getElementById("canvas");
     ctx = can.getContext("2d");
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    ctx.beginPath();
+    ctx.moveTo(0,0);
+    ctx.lineTo(0,0);
+    ctx.stroke();
   }
   
   async function predict(){
     can = document.getElementById("canvas");
     img = can.toDataURL("image/png");
-    // await axios({
-      // url:"http://localhost:80/predict",
-      // method:"POST",
-      // data:{
-        // image_data:img
-      // }
-    // })
+    console.log(img)
+    await axios({
+      url:"http://localhost:80/predict",
+      method:"POST",
+      data:{
+        image_data:img
+      }
+    })
   }
 
 
