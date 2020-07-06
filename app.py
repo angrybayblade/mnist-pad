@@ -33,9 +33,10 @@ def predict():
     image = data['image_data'].split("base64,")[1] + '==='
     image = Image.open(BytesIO(base64.b64decode(image)))
     image = np.expand_dims(resize(np.array(image)[:,:,-1]/255,(28,28)),0)
-    print (simple_net.predict(image).argmax())
 
-    return "HELLO"
+    return jsonify(dict(
+        value=int(simple_net.predict(image).argmax())
+    ))
 
 
 if __name__ == "__main__":

@@ -49,13 +49,14 @@ const App = (prop) =>{
   async function predict(){
     can = document.getElementById("canvas");
     img = can.toDataURL("image/png");
-    console.log(img)
     await axios({
       url:"http://localhost:80/predict",
       method:"POST",
       data:{
         image_data:img
       }
+    }).then(response=>{
+      window.alert(response.data.value)
     })
   }
 
